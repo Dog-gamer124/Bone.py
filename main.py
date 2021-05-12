@@ -33,9 +33,6 @@ class bcolors:
 with open("config.json") as f:
     config = json.load(f)
 
-with open("tags.json") as f:
-    tags = json.load(f)
-
 trusted = config["trusted"]
 owner = config["owner"]
 spamchannel = config["spam_channel"]
@@ -282,7 +279,7 @@ async def token(ctx):
    await ctx.send("lyBvnJ3xfLPgCQdlTWwg7TMPenya0DzBKi6i90tIfkOXRY2g9LwgDl2yj4t")
 
 @bot.command()
-async def help(ctx):
+async def help(ctx):   #*slightly* copied from fripe.py
     commandButList = ''
     for command in bot.walk_commands():
         if len(command.aliases) == 0:
